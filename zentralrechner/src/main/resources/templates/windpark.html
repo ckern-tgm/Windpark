@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/bootstrap.min.css">
+    <link rel="stylesheet" href="/style.css">
+
+    <title>Zentrale</title>
+</head>
+<body>
+
+
+<div class="jumbotron">
+
+    <h1 class="text-center">Windpark: <span th:text="${windpark.id}"></span></h1>
+
+    <div class="row">
+        <div class="col-sm-4" th:each="version : ${windpark.versions}">
+            <div class="card" style="width: 38rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Version: <span th:text="${version.timeStamp}"></span></h5>
+                    <div class="row">
+                        <div class="col-sm-6" th:each="seas,iter : ${version.windraeder}">
+                            <div class="card" style="width: 17rem;">
+                                <div class="card-body">
+                                    <h5>Windrad: <span th:text="${seas.id}"></span></h5>
+                                    Id: <span th:text="${seas.id}">id</span><br/>
+                                    Timestamp: <span th:text="${seas.timeStamp}">id</span><br/>
+                                    power: <span th:text="${seas.power}">id</span><br/>
+                                    blindpower: <span th:text="${seas.blindpower}">id</span><br/>
+                                    windspeed: <span th:text="${seas.windspeed}">id</span><br/>
+                                    rotationspeed: <span th:text="${seas.rotationspeed}">id</span><br/>
+                                    temperature: <span th:text="${seas.temperature}">id</span><br/>
+                                    bladeposition: <span th:text="${seas.bladeposition}">id</span><br/>
+                                    transfertime: <span th:text="${seas.transfertime}">id</span>
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+</body>
+</html>
